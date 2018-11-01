@@ -111,12 +111,7 @@ function attack() {
         }
     }
 
-    state.player.hp -= 20;
-    state.dragon.hp -= 20;
-
-    if (Math.random() >=0.9) {
-        state.dragon.hp -= -10;
-    }
+    
     if (state.player.hp <= 0 || state.dragon.hp <= 0) {
         state.isGameOver = true;
     }
@@ -139,13 +134,13 @@ function renderAttackScreen() {
 
 function renderGameOverScreen() {
 
+    var gameOverScreenHTML;
     if (state.dragon.hp <= 0) {
         gameOverScreenHTML = `<p>game over you win!!</p>`
     } else if (state.player.hp <= 0) {
         gameOverScreenHTML = `<p>game over you lose!!</p>`
 
     }
-    var gameOverScreenHTML = `<p>Game Over</p>`;
     return gameOverScreenHTML;
 }
 
